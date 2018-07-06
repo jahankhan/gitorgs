@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>{{org}}</title>
+  </head>
+  <body>
+    <h1>{{org}}</h1>
+    <ul>
+      <h3>Most forked</h3>
+      {% for repo in forked %}
+        <li>{{repo['name']}} {{repo['forks']}}</li>
+      {% endfor %}
+    </ul>
+
+    <ul>
+      <h3>Most starred</h3>
+      {% for repo in starred %}
+        <li>{{repo['name']}} {{repo['stargazers_count']}}</li>
+      {% endfor %}
+    </ul>
+
+    <ul>
+      <h3>Most contributed to</h3>
+      {% for repo in contributed_to %}
+        <li>{{repo[0]}} {{repo[1]}}</li>
+      {% endfor %}
+    </ul>
+
+    <ul>
+      <h3>Users with the most contributions</h3>
+      {% for contributor in contributors %}
+        <li>{{contributor[0]}} {{contributor[1]}}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
